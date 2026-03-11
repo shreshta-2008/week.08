@@ -1,0 +1,61 @@
+:root {
+  transition: all 0.5s ease;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Magical Night Sky Background */
+  background: radial-gradient(circle at bottom, #000814 0%, #001d3d 100%);
+  overflow: hidden;
+  color: white;
+  font-family: 'Palatino', serif;
+}
+
+/* Floating Candles Animation */
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #fffbe6;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #ffdb58;
+  animation: float 6s infinite ease-in-out;
+}
+
+.candle::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 10px;
+  background: orange;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-30px) rotate(-2deg); }
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: 2px solid gold;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px gold;
+}
